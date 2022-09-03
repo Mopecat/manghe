@@ -77,7 +77,7 @@ export default {
     getList(page) {
       list({ page, status: 1, type: 'salelist' }).then((data) => {
         this.listLoading = false
-        if (data.data.status === 1) {
+        if (data && data.data && data.data.status === 1) {
           const res = data.data.result
           console.log(res)
           if (!this.list) {
@@ -90,7 +90,7 @@ export default {
             this.getList(page + 1)
           }
         } else {
-          alert('请求错误')
+          alert('请求错误' + data.data.status)
         }
       })
     }

@@ -3,7 +3,7 @@ import qs from 'querystring'
 import axios from 'axios'
 
 const service = axios.create({
-  baseURL: '/manghe', // url = base url + request url
+  baseURL: '', // url = base url + request url
   // withCredentials: true, // send cookies when cross-domain requests
   timeout: 100000, // request timeout
   withCredentials: true

@@ -36,17 +36,17 @@ module.exports = {
       warnings: false,
       errors: true
     },
-    disableHostCheck: true
+    disableHostCheck: true,
     // before: require('./mock/mock-server.js'),
-    // proxy: {
-    //   '/manghe': {
-    //     target: 'http://mhbl.jssmla.cn',
-    //     changeOrigin: true,
-    //     pathRewrite: {
-    //       '^/manghe': ''
-    //     }
-    //   }
-    // }
+    proxy: {
+      '/manghe': {
+        target: 'http://127.0.0.1:8989',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/manghe': ''
+        }
+      }
+    }
   },
   configureWebpack: {
     // provide the app's title in webpack's name field, so that
